@@ -20,7 +20,7 @@
         <connection>scm:git:git@github.com:istvanez/DemoVersion.git</connection>
         <developerConnection>scm:git:git@github.com:istvanez/DemoVersion.git</developerConnection>
         <url>https://github.com/istvanez/DemoVersion</url>
-        <tag>0.1</tag>
+        <tag>@{project.version}</tag>
     </scm>
 
     <build>
