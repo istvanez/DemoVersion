@@ -4,7 +4,7 @@
 
     <groupId>org.ea</groupId>
     <artifactId>DemoVersion</artifactId>
-    <version>0.1-SNAPSHOT</version>
+    <version>0.1</version>
 
     <properties>
         <maven.compiler.target>1.8</maven.compiler.target>
@@ -20,7 +20,7 @@
         <connection>scm:git:git@github.com:istvanez/DemoVersion.git</connection>
         <developerConnection>scm:git:git@github.com:istvanez/DemoVersion.git</developerConnection>
         <url>https://github.com/istvanez/DemoVersion</url>
-        <tag>@{project.version}</tag>
+        <tag>0.1</tag>
     </scm>
 
     <build>
