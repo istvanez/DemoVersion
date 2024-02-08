@@ -1,0 +1,86 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.ea</groupId>
+  <artifactId>VersioningDemo</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  
+  	<!-- Configuracion del control de versiones en este caso es GITUP -->
+	<scm>
+		<connection>smc:git:git@github.com:istvanez/DemoVersion.git</connection>
+		<developerConnection>smc:git:git@github.com:istvanez/DemoVersion.git</developerConnection>
+		<url>https://github.com/istvanez/DemoVersion.git</url>
+		<tag>@{project.version}</tag>
+	</scm>  
+  
+	<build>
+		
+		<plugins>
+			<!-- Instancias definidas -->
+		    <plugin>
+		      <groupId>org.apache.maven.plugins</groupId>
+		      <artifactId>maven-surefire-plugin</artifactId>
+		      <configuration>
+		        <forkCount>1</forkCount>
+		      </configuration>
+		    </plugin>
+		    
+			<!-- Configuracion del compilador -->		    			
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<encoding>UTF-8</encoding>
+					<source>21</source>
+					<target>21</target>
+					<compilerVersion>21</compilerVersion>
+					<showDeprecation>true</showDeprecation>
+					<showWarnings>true</showWarnings>
+					<fork>true</fork>
+					<executable>C:\Program Files\Java\jdk-21.0.1\bin\javac</executable>
+				</configuration>
+			</plugin>
+			
+			<!-- Configuracion del ensamblador o package -->		
+			<plugin>
+			    <groupId>org.apache.maven.plugins</groupId>
+			    <artifactId>maven-assembly-plugin</artifactId>
+			    <configuration>
+					<archive>
+							<manifest>
+									<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+									<addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+									<mainClass>org.ea.VersionDemo</mainClass>
+							</manifest>						
+					</archive>
+			        <descriptorRefs>
+			            <descriptorRef>jar-with-dependencies</descriptorRef>
+			        </descriptorRefs>
+			    </configuration>
+			    <executions>
+			        <execution>
+			            <id>make-assembly</id>
+			            <phase>package</phase>
+			            <goals>
+			                <goal>single</goal>
+			            </goals>
+			        </execution>
+			    </executions>
+			</plugin>	
+			
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+				<configuration>
+						<goals>pre-integration-test</goals>
+						<preparationGoals>package</preparationGoals>
+						<allowTimestampedSnapshots>true</allowTimestampedSnapshots>
+						<tagNameFormat>@{project.version}</tagNameFormat>
+						<remoteTagging>false</remoteTagging>
+				</configuration>				
+			</plugin>
+								    
+		    				
+		</plugins>
+	</build>		  
+  
+</project>
