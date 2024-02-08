@@ -75,7 +75,7 @@
 						<preparationGoals>package</preparationGoals>
 						<allowTimestampedSnapshots>true</allowTimestampedSnapshots>
 						<tagNameFormat>@{project.version}</tagNameFormat>
-						<remoteTagging>false</remoteTagging>
+						<remoteTagging>true</remoteTagging>
 				</configuration>				
 			</plugin>
 								    
