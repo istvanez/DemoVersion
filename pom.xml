@@ -2,14 +2,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.ea</groupId>
   <artifactId>VersioningDemo</artifactId>
-  <version>0.0.4-SNAPSHOT</version>
+  <version>0.0.4</version>
   
   	<!-- Configuracion del control de versiones en este caso es GITUP -->
 	<scm>
 		<connection>smc:git:git@github.com:istvanez/DemoVersion.git</connection>
 		<developerConnection>smc:git:git@github.com:istvanez/DemoVersion.git</developerConnection>
 		<url>https://github.com/istvanez/DemoVersion.git</url>
-		<tag>0.0.3</tag>
+		<tag>0.0.4</tag>
 	</scm>  
   
 	<build>
